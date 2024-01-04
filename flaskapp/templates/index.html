@@ -9,7 +9,7 @@
       <div class="card h-100">
         <img
           src="{{url_for('static',filename = product[4])}}"
-          class="card-img-top product-image"
+          class="card-img-top product-image" 
           alt="{{ product.name }}"
           data-bs-toggle="modal"
           data-bs-target="#imageModal"
@@ -33,6 +33,7 @@
     </div>
     {% endfor %}
   </div>
+
   {% include 'modals/image_modal.html' %}
   <!-- Total Cost Display -->
   <div class="text-end mt-4">
@@ -42,4 +43,4 @@
 
 {% endblock %}
 
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
