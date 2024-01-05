@@ -1,7 +1,9 @@
 {% extends 'layout.html' %} {% block content %}
-<h1>Welcome to Kiosk App</h1>
+<br>
+<br>
+<h1 class="container" style="text-align: center">𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐊𝐢𝐨𝐬𝐤 𝐀𝐩𝐩</h1>
 <!-- Product display will go here -->
-
+<br>
 <div class="container mt-4">
   <div class="row">
     {% for product in products %}
@@ -16,7 +18,7 @@
           onclick="showImageinModal(this.src)"
         />
         <div class="card-body">
-          <h5 class="card-title">{{ product[1]}}</h5>
+          <h4 class="card-title">{{ product[1]}}</h4>
           <p class="card-text">
             Price: {{ product[3] }} per {{ product.unit }}
           </p>
@@ -25,7 +27,7 @@
             class="btn btn-primary add-item" 
             onclick="addItemToCart('{{ product[3] }}')"
           >
-            Add Item
+            Add to Basket
           </button>
           <!-- Other button elements -->
         </div>
@@ -36,8 +38,9 @@
 
   {% include 'modals/image_modal.html' %}
   <!-- Total Cost Display -->
+  <br>
   <div class="text-end mt-4">
-    <h3>Total Cost: <span id="totalCost">0</span> Pesos</h3>
+    <h3>𝐓𝐨𝐭𝐚𝐥 𝐏𝐫𝐢𝐜𝐞: ₱ <span id="totalCost">0</span></h3>
   </div>
 </div>
 
