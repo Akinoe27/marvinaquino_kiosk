@@ -1,9 +1,9 @@
 {% extends 'layout.html' %} {% block content %}
-<br>
-<br>
+<br />
+<br />
 <h1 class="container" style="text-align: center">𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐊𝐢𝐨𝐬𝐤 𝐀𝐩𝐩</h1>
 <!-- Product display will go here -->
-<br>
+<br />
 <div class="container mt-4">
   <div class="row">
     {% for product in products %}
@@ -11,7 +11,9 @@
       <div class="card h-100">
         <img
           src="{{url_for('static',filename = product[4])}}"
-          class="card-img-top product-image" 
+          width="100px"
+          height="250px"
+          class="card-img-top product-image"
           alt="{{ product.name }}"
           data-bs-toggle="modal"
           data-bs-target="#imageModal"
@@ -20,30 +22,43 @@
         <div class="card-body">
           <h4 class="card-title">{{ product[1]}}</h4>
           <p class="card-text">
-            Price: {{ product[3] }} per {{ product.unit }}
+            ₱ {{ product[3] }} per kilo {{ product.unit }}
           </p>
           <button
             type="button"
-            class="btn btn-primary add-item" 
+            class="btn btn-primary add-item"
             onclick="addItemToCart('{{ product[3] }}')"
           >
             Add to Basket
           </button>
           <!-- Other button elements -->
+          <button
+            type="button"
+            class="btn btn-secondary order-item"
+            data-bs-toggle="modal"
+            data-bs-target="#orderModal"
+            data-name="{{ product[1] }}"
+            data-price="{{ product[3] }}"
+            data-unit="{{ product[2] }}"
+            data-image="{{ url_for('static', filename=product[4]) }}"
+            onclick="setupModal(this)"
+          >
+            Order Item
+          </button>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
 
-  {% include 'modals/image_modal.html' %}
+  {% include 'modals/image_modal.html' %} {% include 'modals/order_modal.html'
+  %}
   <!-- Total Cost Display -->
-  <br>
   <div class="text-end mt-4">
     <h3>𝐓𝐨𝐭𝐚𝐥 𝐏𝐫𝐢𝐜𝐞: ₱ <span id="totalCost">0</span></h3>
   </div>
 </div>
+<br />
+<br />
 
 {% endblock %}
-
-
