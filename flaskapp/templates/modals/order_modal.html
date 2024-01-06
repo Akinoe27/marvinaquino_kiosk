@@ -2,14 +2,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="orderModalLabel">Your Order</h5>
+                <h5 class="modal-title" id="orderModalLabel">Order Summary</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <img id="productImage" src="" class="card-img-top product-image" alt="Product Image">
                 <form id="orderForm" onsubmit="submitOrderForm(event)">
                     <div class="mb-3">
-                        <label for="productName" class="form-label">Product</label>
+                        <label for="productName" class="form-label">Product Name</label>
                         <input type="text" class="form-control" id="productName" readonly>
                     </div>
                     <div class="mb-3">
@@ -24,7 +24,7 @@
                         <label for="mobileNumber" class="form-label">Mobile Number</label>
                         <input type="tel" class="form-control" id="mobileNumber" pattern="\d*">
                     </div>
-                    <button type="submit" class="btn btn-primary">Add to Order</button>
+                    <button type="submit" class="btn btn-primary">Add to Basket</button>
                 </form>
             </div>
         </div>
