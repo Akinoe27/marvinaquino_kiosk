@@ -26,7 +26,7 @@ function setupModal(button) {
   productImage.src = button.dataset.image;
   const price = parseFloat(button.dataset.price);
   const unit = button.dataset.unit;
-  quantityInput.value = unit === "kg" ? "1.0" : "1";
+  quantityInput.value = unit === "kg" ? "0.0" : "1";
   quantityInput.step = unit === "kg" ? "0.01" : "1";
   totalPriceInput.value = price.toFixed(2);
 
