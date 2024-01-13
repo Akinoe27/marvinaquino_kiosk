@@ -29,7 +29,7 @@
             class="btn btn-primary add-item"
             onclick="addItemToCart('{{ product[3] }}')"
           >
-            Add To Cart
+            Add Item
           </button>
           <!-- Other button elements -->
           <button
@@ -37,6 +37,7 @@
             class="btn btn-light order-item"
             data-bs-toggle="modal"
             data-bs-target="#orderModal"
+            data-id="{{ product[0] }}"
             data-name="{{ product[1] }}"
             data-price="{{ product[3] }}"
             data-unit="{{ product[2] }}"
