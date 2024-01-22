@@ -1,18 +1,16 @@
 {% extends 'layout.html' %} {% block content %}
 <br />
-<br />
-<h1 class="container" style="text-align: center">Welcome To Kiosk App</h1>
+<h2 class="container" style="text-align: center">Welcome To Kiosk App</h2>
 <!-- Product display will go here -->
-<br />
 <div class="container mt-4">
   <div class="row">
     {% for product in products %}
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
-      <div class="card h-100 text-bg-success mb-3">
+      <div class="card h-100 text-bg-light mb-3">
         <img
           src="{{url_for('static',filename = product[4])}}"
           width="100px"
-          height="220px"
+          height="180px"
           class="card-img-top product-image"
           alt="{{ product.name }}"
           data-bs-toggle="modal"
@@ -59,7 +57,10 @@
     <h3>Total Price: ₱ <span id="totalCost">0</span></h3>
   </div>
 </div>
-<br />
-<br />
-
-{% endblock %}
+{% if session.pop('order_submitted', None) %}
+<script>
+  window.onload = function () {
+    alert("Order successfully saved.");
+  };
+</script>
+{% endif %} {% endblock %}

@@ -1,5 +1,5 @@
 from flaskapp import app, mysql
-from flask import jsonify, render_template, request
+from flask import jsonify, redirect, render_template, request, session
 
 @app.route('/')
 def index():
@@ -43,6 +43,9 @@ def submit_order():
     finally:
         # Close the cursor
         cursor.close()
+        
+        session['order_submitted'] = True
+        return redirect ("/")
         
         # Display orders
 @app.route('/orders')
