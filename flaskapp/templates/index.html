@@ -1,16 +1,18 @@
 {% extends 'layout.html' %} {% block content %}
 <br />
-<h2 class="container" style="text-align: center">Welcome To Kiosk App</h2>
+<h2 class="container" style="text-align: center">
+  <strong>Our Products</strong>
+</h2>
 <!-- Product display will go here -->
 <div class="container mt-4">
   <div class="row">
     {% for product in products %}
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
-      <div class="card h-100 text-bg-light mb-3">
+      <div class="card h-80 text-bg-light mb-3">
         <img
           src="{{url_for('static',filename = product[4])}}"
           width="100px"
-          height="180px"
+          height="170px"
           class="card-img-top product-image"
           alt="{{ product.name }}"
           data-bs-toggle="modal"
@@ -18,7 +20,7 @@
           onclick="showImageinModal(this.src)"
         />
         <div class="card-body">
-          <h4 class="card-title">{{ product[1]}}</h4>
+          <h3 class="card-title" style="color: #0d6efd">{{ product[1]}}</h3>
           <p class="card-text">
             ₱ {{ product[3] }} per kilo {{ product.unit }}
           </p>
@@ -41,6 +43,7 @@
             data-unit="{{ product[2] }}"
             data-image="{{ url_for('static', filename=product[4]) }}"
             onclick="setupModal(this)"
+            style="background-color: #d8d8d8"
           >
             Order Item
           </button>
