@@ -1,10 +1,20 @@
 <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
 {% extends 'layout.html' %} {% block content %}
 <br />
-<h2 class="container" style="text-align: center">
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<h2
+  class="container animate__animated animate__fadeInLeft"
+  style="text-align: center"
+>
   <strong>Our Products</strong>
 </h2>
 <!-- Product display will go here -->
@@ -70,4 +80,5 @@
     alert("Order successfully saved.");
   };
 </script>
+
 {% endif %} {% endblock %}
