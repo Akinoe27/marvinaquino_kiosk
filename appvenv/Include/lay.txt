@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Fruit Kiosk</title>
+    <!-- Bootstrap CSS Link -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg"
+        style="background: linear-gradient(135deg, #153677, #4e085f)"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="/" style="color: white"
+            ><strong>Virtual FRUITasan</strong></a
+          >
+          <div class="navbar-nav">
+            <a class="nav-link" href="/" style="color: white"
+              ><strong>HOME <i class="bi bi-house"></i></strong
+            ></a>
+            <a class="nav-link" href="/orders" style="color: white"
+              ><strong
+                >ORDERS <span><i class="bi bi-cart3"></i></span></strong
+            ></a>
+            <!-- Placeholder -->
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">{% block content %}{% endblock %}</main>
+
+    <footer>
+      <!-- Footer Content Here -->
+    </footer>
+
+    <!-- Bootstrap JS Link -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
